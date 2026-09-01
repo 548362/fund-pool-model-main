@@ -1,0 +1,110 @@
+<h1>Rolling Fund Strategy Backtest</h1>
+<h2>Performance comparison</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>portfolio</th>
+      <th>start</th>
+      <th>end</th>
+      <th>observations</th>
+      <th>final_equity</th>
+      <th>total_return</th>
+      <th>cagr</th>
+      <th>annual_volatility</th>
+      <th>sharpe</th>
+      <th>max_drawdown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>strategy_gross</td>
+      <td>2022-10-10</td>
+      <td>2026-08-19</td>
+      <td>942</td>
+      <td>1.047421</td>
+      <td>0.047421</td>
+      <td>0.012083</td>
+      <td>0.207535</td>
+      <td>0.164217</td>
+      <td>-0.288955</td>
+    </tr>
+    <tr>
+      <td>strategy_net</td>
+      <td>2022-10-10</td>
+      <td>2026-08-19</td>
+      <td>942</td>
+      <td>1.006861</td>
+      <td>0.006861</td>
+      <td>0.001774</td>
+      <td>0.207556</td>
+      <td>0.113324</td>
+      <td>-0.305448</td>
+    </tr>
+    <tr>
+      <td>equal_weight_benchmark</td>
+      <td>2022-10-10</td>
+      <td>2026-08-19</td>
+      <td>942</td>
+      <td>1.258801</td>
+      <td>0.258801</td>
+      <td>0.061479</td>
+      <td>0.186964</td>
+      <td>0.423061</td>
+      <td>-0.319175</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Turnover and costs</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>start</th>
+      <th>end</th>
+      <th>rebalance</th>
+      <th>rebalance_count</th>
+      <th>executed_rebalance_count</th>
+      <th>cost_bps</th>
+      <th>top_n</th>
+      <th>weight_scheme</th>
+      <th>max_weight</th>
+      <th>average_turnover</th>
+      <th>annualized_turnover</th>
+      <th>total_traded_notional</th>
+      <th>total_transaction_cost</th>
+      <th>cost_drag</th>
+      <th>net_excess_total_return</th>
+      <th>net_excess_cagr</th>
+      <th>beat_benchmark</th>
+      <th>average_return_coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022-10-10</td>
+      <td>2026-08-19</td>
+      <td>month</td>
+      <td>48</td>
+      <td>47</td>
+      <td>10.000000</td>
+      <td>3</td>
+      <td>weight_risk_parity</td>
+      <td>1.000000</td>
+      <td>0.419929</td>
+      <td>5.116259</td>
+      <td>39.473289</td>
+      <td>0.039473</td>
+      <td>0.040559</td>
+      <td>-0.251940</td>
+      <td>-0.059705</td>
+      <td>False</td>
+      <td>0.998855</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Questions answered</h2>
+<p>Net strategy total return: 0.69%</p>
+<p>Benchmark total return: 25.88%</p>
+<p>Beat benchmark: False</p>
+<p>Annualized turnover: 5.12x</p>
+<p>Cost drag on final wealth: 0.0406</p>
+<p><img src="rolling_equity_curve.png" alt="Strategy and benchmark equity curves"></p>
