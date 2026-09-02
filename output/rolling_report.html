@@ -1,0 +1,111 @@
+<h1>Rolling Fund Strategy Backtest</h1>
+<p><strong>Research limitation:</strong> Signals are point-in-time, but the configured fund universe is fixed and may contain survivorship/availability bias.</p>
+<h2>Performance comparison</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>portfolio</th>
+      <th>start</th>
+      <th>end</th>
+      <th>observations</th>
+      <th>final_equity</th>
+      <th>total_return</th>
+      <th>cagr</th>
+      <th>annual_volatility</th>
+      <th>sharpe</th>
+      <th>max_drawdown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>strategy_gross</td>
+      <td>2023-02-01</td>
+      <td>2026-08-21</td>
+      <td>867</td>
+      <td>1.229967</td>
+      <td>0.229967</td>
+      <td>0.060022</td>
+      <td>0.240384</td>
+      <td>0.371109</td>
+      <td>-0.316482</td>
+    </tr>
+    <tr>
+      <td>strategy_net</td>
+      <td>2023-02-01</td>
+      <td>2026-08-21</td>
+      <td>867</td>
+      <td>1.204272</td>
+      <td>0.204272</td>
+      <td>0.053739</td>
+      <td>0.240275</td>
+      <td>0.345631</td>
+      <td>-0.321248</td>
+    </tr>
+    <tr>
+      <td>equal_weight_benchmark</td>
+      <td>2023-02-01</td>
+      <td>2026-08-21</td>
+      <td>867</td>
+      <td>1.209066</td>
+      <td>0.209066</td>
+      <td>0.054918</td>
+      <td>0.189093</td>
+      <td>0.386646</td>
+      <td>-0.315947</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Turnover and costs</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>start</th>
+      <th>end</th>
+      <th>rebalance</th>
+      <th>rebalance_count</th>
+      <th>executed_rebalance_count</th>
+      <th>cost_bps</th>
+      <th>top_n</th>
+      <th>weight_scheme</th>
+      <th>max_weight</th>
+      <th>average_turnover</th>
+      <th>annualized_turnover</th>
+      <th>total_traded_notional</th>
+      <th>total_transaction_cost</th>
+      <th>cost_drag</th>
+      <th>net_excess_total_return</th>
+      <th>net_excess_cagr</th>
+      <th>beat_benchmark</th>
+      <th>average_return_coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-02-01</td>
+      <td>2026-08-21</td>
+      <td>month</td>
+      <td>44</td>
+      <td>43</td>
+      <td>10.000000</td>
+      <td>10</td>
+      <td>weight_equal</td>
+      <td>1.000000</td>
+      <td>0.246512</td>
+      <td>2.985081</td>
+      <td>21.200000</td>
+      <td>0.021200</td>
+      <td>0.025694</td>
+      <td>-0.004794</td>
+      <td>-0.001180</td>
+      <td>False</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Questions answered</h2>
+<p>Net strategy total return: 20.43%</p>
+<p>Benchmark total return: 20.91%</p>
+<p>Beat benchmark: False</p>
+<p>Annualized turnover: 2.99x</p>
+<p>Cost drag on final wealth: 0.0257</p>
+<p><img src="rolling_equity_curve.png" alt="Strategy and benchmark equity curves"></p>
